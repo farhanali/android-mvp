@@ -1,0 +1,72 @@
+buildscript {
+    repositories {
+        jcenter()
+    }
+}
+
+apply plugin: 'com.android.application'
+apply plugin: 'com.neenbedankt.android-apt'
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion "23.0.3"
+
+    defaultConfig {
+        applicationId "in.farhanali.androidmvp"
+        minSdkVersion 15
+        targetSdkVersion 25
+        versionCode 1
+        versionName "Beta 5.3"
+        multiDexEnabled true
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    packagingOptions {
+        exclude 'META-INF/ASL2.0'
+        exclude 'META-INF/ASL2.0'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/NOTICE.txt'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/MANIFEST.MF'
+    }
+    dexOptions {
+        javaMaxHeapSize "4g"
+        preDexLibraries = false
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+
+    // Android support libs & google play service libs
+    compile 'com.android.support:appcompat-v7:25.0.1'
+    compile 'com.android.support:design:25.0.1'
+
+    // Networking
+    compile 'com.squareup.retrofit2:retrofit:2.0.0'
+    compile 'com.squareup.retrofit2:converter-gson:2.0.0'
+    compile 'com.squareup.okhttp3:okhttp:3.1.2'
+    compile 'com.squareup.okhttp3:logging-interceptor:3.0.1'
+    compile 'com.squareup.retrofit2:adapter-rxjava:2.0.0'
+
+    // rx
+    compile 'io.reactivex:rxjava:1.1.1'
+    compile 'io.reactivex:rxandroid:1.1.0'
+
+    // Dependency injection - Dagger 2
+    apt 'com.google.dagger:dagger-compiler:2.1'
+    compile 'com.google.dagger:dagger:2.1'
+    provided 'javax.annotation:jsr250-api:1.0'
+
+    // UI libraries
+    compile 'com.jakewharton:butterknife:7.0.1'
+
+    // utilities
+    compile 'com.jakewharton.timber:timber:3.1.0'
+
+}

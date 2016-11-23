@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Android MVP</string>
+
+    <string name="action_logout">Logout</string>
+</resources>

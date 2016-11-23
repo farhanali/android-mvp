@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="in.farhanali.androidmvp" >
+
+    <!--permissions-->
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:name="in.farhanali.androidmvp.AndroidMvpApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+
+        <!--activities-->
+        <activity
+            android:name="in.farhanali.androidmvp.module.login.view.LoginActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+
+    </application>
+
+</manifest>
