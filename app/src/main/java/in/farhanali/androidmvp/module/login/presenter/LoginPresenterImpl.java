@@ -27,9 +27,13 @@ public class LoginPresenterImpl extends BaseNetworkPresenter<LoginViewInteractor
         User user = new User(email, password);
         Observable<Response<User>> loginObservable = todoService.login(user);
 
+        getViewInteractor().showProgress();
+
         subscribeForNetwork(loginObservable, new ApiObserver<Response<User>>() {
             @Override
             public void onResponse(Response<User> response) {
+                getViewInteractor().hidProgress();
+
                 if (response.code() == 200) {
                     getViewInteractor().onLoginSuccess(response.body());
                     return;
@@ -42,6 +46,7 @@ public class LoginPresenterImpl extends BaseNetworkPresenter<LoginViewInteractor
 
             @Override
             public void onError(Throwable e) {
+                getViewInteractor().hidProgress();
                 // network call failed due to some error, do something
                 getViewInteractor().onLoginFailed("Network call failed");
             }

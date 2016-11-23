@@ -2,4 +2,10 @@
     <string name="app_name">Android MVP</string>
 
     <string name="action_logout">Logout</string>
+
+    <string name="login_email_hint">Email</string>
+    <string name="login_password_hint">Password</string>
+    <string name="login_btn_text">Sign In</string>
+    <string name="login_app_title">Android MVP Sample\n(Todo App)</string>
+    <string name="login_instruction">* Mock server will create a user if its not existing there</string>
 </resources>
