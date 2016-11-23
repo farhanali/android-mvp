@@ -6,8 +6,8 @@ package in.farhanali.androidmvp.module.base;
 public class ViewInteractorNotAttachedException extends RuntimeException {
 
     public ViewInteractorNotAttachedException() {
-        super("Please call Presenter.attachViewViewInteractor(viewInteractor) before" +
-                " requesting data to the Presenter");
+        super("Presenter.attachViewViewInteractor(viewInteractor) should be called before" +
+                " accessing presenter methods which uses view interactor object");
     }
 
 }
