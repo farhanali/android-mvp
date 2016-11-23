@@ -89,7 +89,7 @@
             android:layout_alignLeft="@+id/img_password_icon"
             android:layout_alignStart="@+id/img_password_icon"
             android:layout_below="@+id/divider2"
-            android:layout_marginTop="8dp"
+            android:layout_margin="8dp"
             android:textSize="@dimen/login_instruction_size"
             android:text="@string/login_instruction"/>
 
