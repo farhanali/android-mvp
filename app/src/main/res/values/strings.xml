@@ -7,5 +7,5 @@
     <string name="login_password_hint">Password</string>
     <string name="login_btn_text">Sign In</string>
     <string name="login_app_title">Android MVP Sample\n(Todo App)</string>
-    <string name="login_instruction">* Mock server will create a user if its not existing there</string>
+    <string name="login_instruction">Mock server will create a new user at first time login with an email &amp; password</string>
 </resources>
