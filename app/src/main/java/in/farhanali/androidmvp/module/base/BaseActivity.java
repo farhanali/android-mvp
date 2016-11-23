@@ -9,8 +9,6 @@ import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
-import android.view.MenuItem;
-import android.view.View;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -42,17 +40,6 @@ public abstract class BaseActivity extends AppCompatActivity {
     public void setContentView(int layoutResId) {
         super.setContentView(layoutResId);
         bindViews();
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case android.R.id.home:
-                finish();
-                break;
-        }
-
-        return super.onOptionsItemSelected(item);
     }
 
     @Override
@@ -158,31 +145,6 @@ public abstract class BaseActivity extends AppCompatActivity {
     }
 
     /**
-     * Start an activity by clearing all previous activities.
-     *
-     * @param activityClass Class<? extends Activity>
-     * @param bundle Bundle
-     */
-    public void startActivityClearTop(Class<? extends Activity> activityClass, Bundle bundle) {
-        Intent intent = new Intent(this, activityClass);
-        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP
-                | Intent.FLAG_ACTIVITY_CLEAR_TASK
-                | Intent.FLAG_ACTIVITY_NEW_TASK);
-
-        if (bundle != null) intent.putExtras(bundle);
-
-        startActivity(intent);
-    }
-
-    /**
-     * Restarts an activity
-     */
-    protected void restartActivity() {
-        finish();
-        startActivity(getIntent());
-    }
-
-    /**
      * Sets orientation to portrait only.
      */
     protected void setOrientationPortrait() {
@@ -210,15 +172,6 @@ public abstract class BaseActivity extends AppCompatActivity {
      */
     protected void setOrientation(int orientation) {
         this.orientation = orientation;
-    }
-
-    /**
-     * Get the content view of an activity.
-     *
-     * @return
-     */
-    protected View getContentView() {
-        return findViewById(android.R.id.content);
     }
 
 }

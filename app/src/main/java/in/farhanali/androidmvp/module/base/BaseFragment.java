@@ -33,6 +33,8 @@ public abstract class BaseFragment extends Fragment {
 
     /**
      * Starts an activity with a bundle set to the intent.
+     * Didn't invoked 'startActivity' method in BaseActivity to avoid chance of ClassCastException
+     * while using with Activity which are not inherited BaseActivity.
      *
      * @param activityClass Class<? extends Activity>
      * @param bundle Bundle
@@ -43,32 +45,6 @@ public abstract class BaseFragment extends Fragment {
         if (bundle != null) intent.putExtras(bundle);
 
         startActivity(intent);
-    }
-
-    /**
-     * Start an activity by clearing all previous activities.
-     *
-     * @param activityClass Class<? extends Activity>
-     * @param bundle Bundle
-     */
-    public void startActivityClearTop(Class<? extends Activity> activityClass, Bundle bundle) {
-        Intent intent = new Intent(getActivity(), activityClass);
-        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP
-                | Intent.FLAG_ACTIVITY_CLEAR_TASK
-                | Intent.FLAG_ACTIVITY_NEW_TASK);
-
-        if (bundle != null) intent.putExtras(bundle);
-
-        startActivity(intent);
-    }
-
-    /**
-     * Get the content view of fragment.
-     *
-     * @return
-     */
-    protected View getContentView() {
-        return getView();
     }
 
 }
