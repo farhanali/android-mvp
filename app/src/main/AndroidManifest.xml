@@ -21,6 +21,8 @@
             </intent-filter>
         </activity>
 
+        <activity android:name=".module.task.view.TaskListActivity"/>
+
     </application>
 
 </manifest>

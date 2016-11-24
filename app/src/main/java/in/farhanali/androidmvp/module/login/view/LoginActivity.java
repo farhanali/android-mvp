@@ -17,6 +17,7 @@ import in.farhanali.androidmvp.module.base.BaseActivity;
 import in.farhanali.androidmvp.module.common.util.Bakery;
 import in.farhanali.androidmvp.module.login.presenter.LoginPresenter;
 import in.farhanali.androidmvp.module.login.presenter.LoginViewInteractor;
+import in.farhanali.androidmvp.module.task.view.TaskListActivity;
 
 /**
  * @author Farhan Ali
@@ -67,6 +68,8 @@ public class LoginActivity extends BaseActivity implements LoginViewInteractor {
     @Override
     public void onLoginSuccess(User user) {
         bakery.toastShort("Success: " + user.getEmail());
+        startActivity(TaskListActivity.class, null);
+        finish();
     }
 
     @Override

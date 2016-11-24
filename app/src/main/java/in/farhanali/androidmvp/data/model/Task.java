@@ -17,6 +17,20 @@ public class Task {
     @Expose @SerializedName("isActive")
     private boolean active;
 
+    public Task() {
+    }
+
+    public Task(String name, boolean active) {
+        this.name = name;
+        this.active = active;
+    }
+
+    public Task(long userId, String name, boolean active) {
+        this.userId = userId;
+        this.name = name;
+        this.active = active;
+    }
+
     public long getId() {
         return id;
     }
@@ -47,6 +61,10 @@ public class Task {
 
     public void setActive(boolean active) {
         this.active = active;
+    }
+
+    public void toggleActive() {
+        setActive(! active);
     }
 
 }

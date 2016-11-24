@@ -38,12 +38,12 @@
 
         <ImageView
             android:id="@+id/img_name_icon"
-            style="@style/LoginEditTextLeftIcon"
+            style="@style/EditTextLeftIcon"
             android:src="@drawable/login_ic_name"/>
 
         <EditText
             android:id="@+id/edt_email"
-            style="@style/LoginEditText"
+            style="@style/EditText"
             android:layout_alignBottom="@+id/img_name_icon"
             android:layout_toEndOf="@+id/img_name_icon"
             android:layout_toRightOf="@+id/img_name_icon"
@@ -52,19 +52,19 @@
 
         <View
             android:id="@+id/divider1"
-            style="@style/LoginEditTextDivider"
+            style="@style/EditTextDivider"
             android:layout_below="@+id/img_name_icon"/>
 
         <ImageView
             android:id="@+id/img_password_icon"
-            style="@style/LoginEditTextLeftIcon"
+            style="@style/EditTextLeftIcon"
             android:layout_below="@+id/divider1"
             android:layout_marginTop="@dimen/spacing_medium"
             android:src="@drawable/login_ic_password"/>
 
         <EditText
             android:id="@+id/edt_password"
-            style="@style/LoginEditText"
+            style="@style/EditText"
             android:layout_alignBottom="@+id/img_password_icon"
             android:layout_toEndOf="@+id/img_password_icon"
             android:layout_toRightOf="@+id/img_password_icon"
@@ -73,7 +73,7 @@
 
         <View
             android:id="@+id/divider2"
-            style="@style/LoginEditTextDivider"
+            style="@style/EditTextDivider"
             android:layout_below="@+id/img_password_icon"/>
 
         <Button

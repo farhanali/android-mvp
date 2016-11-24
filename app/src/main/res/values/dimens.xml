@@ -7,4 +7,8 @@
 
     <dimen name="login_app_title_size">22sp</dimen>
     <dimen name="login_instruction_size">12sp</dimen>
+
+    <dimen name="app_bar_title_size">18sp</dimen>
+    <dimen name="task_list_item_height">40dp</dimen>
+    <dimen name="task_list_item_button_width">40dp</dimen>
 </resources>

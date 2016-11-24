@@ -57,4 +57,8 @@ public class User {
         this.accessToken = accessToken;
     }
 
+    public String getAuthorization() {
+        return "Basic " + accessToken;
+    }
+
 }

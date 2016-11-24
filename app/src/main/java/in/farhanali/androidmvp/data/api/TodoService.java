@@ -37,14 +37,17 @@ public interface TodoService {
     @DELETE("tasks")
     Observable<Response<Void>> clearTasks(@Header("Authorization") String authorization);
 
+    @DELETE("tasks?active=false")
+    Observable<Response<Void>> clearCompletedTasks(@Header("Authorization") String authorization);
+
     @GET("tasks/{id}")
-    Observable<Response<Task>> getTask(@Header("Authorization") String authorization, @Path("id") int taskId);
+    Observable<Response<Task>> getTask(@Header("Authorization") String authorization, @Path("id") long taskId);
 
     @PUT("tasks/{id}")
     Observable<Response<Task>> updateTask(
-            @Header("Authorization") String authorization, @Path("id") int id, @Body Task task);
+            @Header("Authorization") String authorization, @Path("id") long id, @Body Task task);
 
     @DELETE("tasks/{id}")
-    Observable<Response<Void>> deleteTask(@Header("Authorization") String authorization, @Path("id") int taskId);
+    Observable<Response<Void>> deleteTask(@Header("Authorization") String authorization, @Path("id") long taskId);
 
 }

@@ -1,11 +1,22 @@
 <resources>
-    <string name="app_name">Android MVP</string>
 
-    <string name="action_logout">Logout</string>
+    <string name="app_name">Android MVP (Todo\'s)</string>
 
     <string name="login_email_hint">Email</string>
     <string name="login_password_hint">Password</string>
     <string name="login_btn_text">Sign In</string>
     <string name="login_app_title">Android MVP Sample\n(Todo App)</string>
     <string name="login_instruction">Mock server will create a new user, if it\'s the first time login with an email &amp; password</string>
+
+    <string name="task_empty_text">You have no TO-DOs!</string>
+    <string name="task_add_new_hint">Add new task</string>
+
+    <string name="task_menu_filter">Filter</string>
+    <string name="task_menu_clear_all">Clear all</string>
+    <string name="task_menu_clear_completed">Clear completed</string>
+    <string name="task_menu_logout">Logout</string>
+    <string name="task_filter_menu_all">All</string>
+    <string name="task_filter_menu_active">Active</string>
+    <string name="task_filter_menu_completed">Completed</string>
+
 </resources>

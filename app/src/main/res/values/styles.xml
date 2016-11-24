@@ -23,7 +23,7 @@
         <item name="android:textSize">18sp</item>
     </style>
 
-    <style name="LoginEditText">
+    <style name="EditText">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_marginLeft">@dimen/spacing_small</item>
@@ -34,14 +34,14 @@
         <item name="android:textSize">15sp</item>
     </style>
 
-    <style name="LoginEditTextLeftIcon">
+    <style name="EditTextLeftIcon">
         <item name="android:layout_width">30dp</item>
         <item name="android:layout_height">30dp</item>
         <item name="android:layout_marginLeft">@dimen/spacing_medium</item>
         <item name="android:padding">@dimen/spacing_tiny</item>
     </style>
 
-    <style name="LoginEditTextDivider">
+    <style name="EditTextDivider">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">1dp</item>
         <item name="android:background">@color/gray10</item>

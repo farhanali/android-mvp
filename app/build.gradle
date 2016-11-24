@@ -46,6 +46,7 @@ dependencies {
     // Android support libs & google play service libs
     compile 'com.android.support:appcompat-v7:25.0.1'
     compile 'com.android.support:design:25.0.1'
+    compile 'com.android.support:recyclerview-v7:25.0.1'
 
     // Networking
     compile 'com.squareup.retrofit2:retrofit:2.0.0'
