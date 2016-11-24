@@ -32,6 +32,8 @@ public class LoginActivity extends BaseActivity implements LoginViewInteractor {
     @Bind(R.id.edt_email) EditText edtEmail;
     @Bind(R.id.edt_password) EditText edtPassword;
 
+    // activity lifecycle methods
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,6 +46,9 @@ public class LoginActivity extends BaseActivity implements LoginViewInteractor {
 
         // attach view interactor for the presenter
         loginPresenter.attachViewInteractor(this);
+
+        // verify already logged in
+        loginPresenter.verifyLoggedIn();
     }
 
     @OnClick(R.id.btn_login)
@@ -56,25 +61,37 @@ public class LoginActivity extends BaseActivity implements LoginViewInteractor {
     // view interactor method implementations
 
     @Override
-    public void showProgress() {
-        progress.setVisibility(View.VISIBLE);
-    }
-
-    @Override
-    public void hidProgress() {
-        progress.setVisibility(View.GONE);
+    public void onLoggedInVerified(User user) {
+        bakery.toastShort(user.getEmail());
+        loadTaskActivity();
     }
 
     @Override
     public void onLoginSuccess(User user) {
         bakery.toastShort("Success: " + user.getEmail());
-        startActivity(TaskListActivity.class, null);
-        finish();
+        loadTaskActivity();
     }
 
     @Override
     public void onLoginFailed(String message) {
         bakery.toastShort(message);
+    }
+
+    @Override
+    public void showProgress() {
+        progress.setVisibility(View.VISIBLE);
+    }
+
+    @Override
+    public void hideProgress() {
+        progress.setVisibility(View.GONE);
+    }
+
+    // activity private methods
+
+    private void loadTaskActivity() {
+        startActivity(TaskListActivity.class, null);
+        finish();
     }
 
 }

@@ -25,6 +25,15 @@ public class LoginPresenterImpl extends BaseNetworkPresenter<LoginViewInteractor
     }
 
     @Override
+    public void verifyLoggedIn() {
+        User user = userPreference.read();
+
+        if (user != null) {
+            getViewInteractor().onLoggedInVerified(user);
+        }
+    }
+
+    @Override
     public void doLogin(String email, String password) {
         User user = new User(email, password);
         Observable<Response<User>> loginObservable = todoService.login(user);
@@ -36,7 +45,7 @@ public class LoginPresenterImpl extends BaseNetworkPresenter<LoginViewInteractor
             @Override
             public void onResponse(Response<User> response) {
                 // hid progressbar in view on network call response
-                getViewInteractor().hidProgress();
+                getViewInteractor().hideProgress();
 
                 // if response is either created(201: at first time login with an email)
                 // or success(200: during later login with correct credentials
@@ -57,7 +66,7 @@ public class LoginPresenterImpl extends BaseNetworkPresenter<LoginViewInteractor
             @Override
             public void onError(Throwable e) {
                 // hid progressbar in view on network call error
-                getViewInteractor().hidProgress();
+                getViewInteractor().hideProgress();
                 // network call failed, call appropriate view methods
                 getViewInteractor().onLoginFailed("Network call failed");
             }

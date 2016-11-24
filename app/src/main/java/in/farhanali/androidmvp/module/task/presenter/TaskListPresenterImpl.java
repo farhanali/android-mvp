@@ -148,7 +148,7 @@ public class TaskListPresenterImpl extends BaseNetworkPresenter<TaskListViewInte
     @Override
     public void doLogout() {
         userPreference.clear();
-        getViewInteractor().onLogoutDone();
+        getViewInteractor().onLoggedOut();
     }
 
     private void loadTasks(Observable observable) {

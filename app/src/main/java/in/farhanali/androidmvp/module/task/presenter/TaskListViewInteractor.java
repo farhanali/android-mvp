@@ -24,7 +24,7 @@ public interface TaskListViewInteractor extends ViewInteractor {
 
     void onTasksCleared();
 
-    void onLogoutDone();
+    void onLoggedOut();
 
     void onError(String message, Throwable e);
 

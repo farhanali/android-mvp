@@ -7,6 +7,8 @@ import in.farhanali.androidmvp.module.base.Presenter;
  */
 public interface LoginPresenter extends Presenter<LoginViewInteractor> {
 
+    void verifyLoggedIn();
+
     void doLogin(String email, String password);
 
 }

@@ -26,6 +26,7 @@ import in.farhanali.androidmvp.data.model.Task;
 import in.farhanali.androidmvp.injection.Injector;
 import in.farhanali.androidmvp.module.base.BaseActivity;
 import in.farhanali.androidmvp.module.common.util.Bakery;
+import in.farhanali.androidmvp.module.login.view.LoginActivity;
 import in.farhanali.androidmvp.module.task.presenter.TaskListPresenter;
 import in.farhanali.androidmvp.module.task.presenter.TaskListViewInteractor;
 
@@ -162,7 +163,8 @@ public class TaskListActivity extends BaseActivity implements TaskListViewIntera
     }
 
     @Override
-    public void onLogoutDone() {
+    public void onLoggedOut() {
+        startActivity(LoginActivity.class, null);
         finish();
     }
 
