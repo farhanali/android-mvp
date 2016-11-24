@@ -22,7 +22,6 @@ import in.farhanali.androidmvp.module.task.view.TaskListActivity;
 /**
  * @author Farhan Ali
  */
-
 public class LoginActivity extends BaseActivity implements LoginViewInteractor {
 
     @Inject LoginPresenter loginPresenter;

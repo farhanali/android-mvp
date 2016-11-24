@@ -10,7 +10,7 @@ import in.farhanali.androidmvp.module.common.util.PreferenceUtil;
 import in.farhanali.androidmvp.module.common.util.UserPreference;
 
 /**
- * Provides all common module class dependencies.
+ * Provides all common module dependencies.
  *
  * @author Farhan Ali
  */

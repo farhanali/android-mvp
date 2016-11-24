@@ -6,7 +6,7 @@ import in.farhanali.androidmvp.module.task.presenter.TaskListPresenter;
 import in.farhanali.androidmvp.module.task.presenter.TaskListPresenterImpl;
 
 /**
- * Provides all task module class dependencies.
+ * Provides all task module dependencies.
  *
  * @author Farhan Ali
  */

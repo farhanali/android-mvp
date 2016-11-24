@@ -75,7 +75,7 @@ public class TaskListAdapter extends RecyclerView.Adapter<TaskListAdapter.ViewHo
 
         @OnClick(R.id.txt_title)
         void onTitleTextClick() {
-            itemClickListener.onTaskItemClick(tasks.get(position));
+            itemClickListener.onTaskTitleClick(tasks.get(position));
         }
 
         @OnClick(R.id.chk_active)
@@ -91,7 +91,7 @@ public class TaskListAdapter extends RecyclerView.Adapter<TaskListAdapter.ViewHo
 
     public static interface ItemClickListener {
 
-        void onTaskItemClick(Task task);
+        void onTaskTitleClick(Task task);
 
         void onTaskStatusClick(Task task);
 

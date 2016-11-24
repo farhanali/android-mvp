@@ -10,10 +10,6 @@ import in.farhanali.androidmvp.module.base.ViewInteractor;
  */
 public interface TaskListViewInteractor extends ViewInteractor {
 
-    void showProgress();
-
-    void hideProgress();
-
     void onTaskCreated(Task task);
 
     void onTaskUpdated(Task task);
@@ -27,5 +23,9 @@ public interface TaskListViewInteractor extends ViewInteractor {
     void onLoggedOut();
 
     void onError(String message, Throwable e);
+
+    void showProgress();
+
+    void hideProgress();
 
 }

@@ -104,7 +104,7 @@ public class TaskListActivity extends BaseActivity implements TaskListViewIntera
     // task list adapter click listener method implementations
 
     @Override
-    public void onTaskItemClick(Task task) {
+    public void onTaskTitleClick(Task task) {
         bakery.toastShort(task.getName());
     }
 
@@ -120,16 +120,6 @@ public class TaskListActivity extends BaseActivity implements TaskListViewIntera
     }
 
     // view interactor method implementations
-
-    @Override
-    public void showProgress() {
-        progress.setVisibility(View.VISIBLE);
-    }
-
-    @Override
-    public void hideProgress() {
-        progress.setVisibility(View.GONE);
-    }
 
     @Override
     public void onTaskCreated(Task task) {
@@ -171,6 +161,16 @@ public class TaskListActivity extends BaseActivity implements TaskListViewIntera
     @Override
     public void onError(String message, Throwable e) {
         bakery.toastShort(message);
+    }
+
+    @Override
+    public void showProgress() {
+        progress.setVisibility(View.VISIBLE);
+    }
+
+    @Override
+    public void hideProgress() {
+        progress.setVisibility(View.GONE);
     }
 
     // activity private methods

@@ -29,7 +29,7 @@ import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 /**
- * Provides dependencies related to the ApiModule.
+ * Provides dependencies related to the api (retrofit 2 based).
  *
  * @author Farhan Ali
  */

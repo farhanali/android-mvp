@@ -13,7 +13,7 @@ import java.util.Map;
 public class Config {
 
     //--------------------------------------------------------------------------------
-    // App generic configurations
+    // App general configurations
     //--------------------------------------------------------------------------------
     public static final boolean DEBUG = true;
 

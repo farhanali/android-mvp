@@ -6,7 +6,7 @@ import in.farhanali.androidmvp.module.login.presenter.LoginPresenter;
 import in.farhanali.androidmvp.module.login.presenter.LoginPresenterImpl;
 
 /**
- * Provides all login module class dependencies.
+ * Provides all login module dependencies.
  *
  * @author Farhan Ali
  */

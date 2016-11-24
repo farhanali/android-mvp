@@ -15,7 +15,7 @@ import in.farhanali.androidmvp.injection.Injector;
 /**
  * @author Farhan Ali
  *
- * Util class to deal with shated preferences, this class make use of gson to save custom objects.
+ * Util class to deal with shared preferences, this class make use of gson to save custom objects.
  */
 public class PreferenceUtil {
 

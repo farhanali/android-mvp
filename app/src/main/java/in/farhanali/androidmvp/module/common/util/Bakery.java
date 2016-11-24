@@ -11,6 +11,8 @@ import in.farhanali.androidmvp.injection.Injector;
 
 /**
  * @author Farhan Ali
+ *
+ * A utility class which makes showing toast and snackbar messages easier.
  */
 public class Bakery {
 

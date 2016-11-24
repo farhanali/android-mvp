@@ -14,7 +14,7 @@ public class AndroidMvpApplication extends Application {
     public void onCreate() {
         super.onCreate();
 
-        // Create module to make it ready for the injection
+        // Create application component to make it ready for the injection
         Injector.createApplicationComponent(this);
 
         // Plant Timber tree for Logging
