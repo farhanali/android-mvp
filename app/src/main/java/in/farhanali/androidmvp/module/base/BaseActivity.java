@@ -22,6 +22,7 @@ import in.farhanali.androidmvp.Config;
  * @author Farhan Ali
  *
  * Provides some basic operations, all activities should extend this class.
+ * Also provides facility to handle permission request by using with PermissionCallback
  */
 public abstract class BaseActivity extends AppCompatActivity {
 
@@ -42,6 +43,8 @@ public abstract class BaseActivity extends AppCompatActivity {
         bindViews();
     }
 
+    // Delegate permission results to appropriate PermissionCallback methods
+    // Can be override for normal implementation without PermissionCallback object
     @Override
     public void onRequestPermissionsResult(
             int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
@@ -61,6 +64,7 @@ public abstract class BaseActivity extends AppCompatActivity {
         List<String> deniedPermissions = new ArrayList<>();
         int index = 0;
 
+        // iterate through the permissions and add to appropriate list
         for (String permission : permissions) {
             List<String> permissionList = grantResults[index] == PackageManager.PERMISSION_GRANTED
                     ? grantedPermissions
@@ -86,6 +90,7 @@ public abstract class BaseActivity extends AppCompatActivity {
                     blockedPermissions.toArray(new String[blockedPermissions.size()]));
         }
 
+        // remove the request after providing permission result
         permissionCallbackMap.remove(requestCode);
     }
 
@@ -174,4 +179,16 @@ public abstract class BaseActivity extends AppCompatActivity {
         this.orientation = orientation;
     }
 
+    /**
+     * @author Farhan Ali
+     */
+    public static interface PermissionCallback {
+
+        void onPermissionGranted(String[] grantedPermissions);
+
+        void onPermissionDenied(String[] deniedPermissions);
+
+        void onPermissionBlocked(String[] blockedPermissions);
+
+    }
 }
