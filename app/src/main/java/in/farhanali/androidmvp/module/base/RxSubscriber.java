@@ -1,16 +1,17 @@
 package in.farhanali.androidmvp.module.base;
 
-import rx.Observable;
-import rx.Observer;
-import rx.Subscription;
-import rx.android.schedulers.AndroidSchedulers;
-import rx.schedulers.Schedulers;
-import rx.subscriptions.CompositeSubscription;
+import io.reactivex.Observable;
+import io.reactivex.Observer;
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.disposables.CompositeDisposable;
+import io.reactivex.disposables.Disposable;
+import io.reactivex.observers.DisposableObserver;
+import io.reactivex.schedulers.Schedulers;
 
 /**
  * @author Farhan Ali
  *
- * A utility class which provides Rx subscribe and unsubscribe methods.
+ * A utility class which provides Rx subscribe and dispose methods.
  */
 public class RxSubscriber {
 
@@ -22,33 +23,33 @@ public class RxSubscriber {
      * @param observer
      */
     public static void subscribe(
-            CompositeSubscription subscription, Observable observable, Observer observer) {
+            CompositeDisposable subscription, Observable observable, DisposableObserver observer) {
         //noinspection unchecked
-        subscription.add(observable
+        subscription.add((Disposable) observable
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(observer));
+                .subscribeWith(observer));
     }
 
     /**
      * Reconstruct a Subscription object if it is null or unsubscribed,
      * This method is usually called from attachViewInteractor of a presenter with network call.
      *
-     * @param subscription
+     * @param disposable
      */
-    public static void validateSubscription(Subscription subscription) {
-        if (subscription == null || subscription.isUnsubscribed()) {
-            subscription = new CompositeSubscription();
+    public static void validateSubscription(Disposable disposable) {
+        if (disposable == null || disposable.isDisposed()) {
+            disposable = new CompositeDisposable();
         }
     }
 
     /**
      * Unsubscribe a subscription - usually called from detachViewInteractor of network related presenter.
-     * @param subscription
+     * @param disposable
      */
-    public static void unsubscribe(Subscription subscription) {
-        if (subscription != null) {
-            subscription.unsubscribe();
+    public static void dispose(Disposable disposable) {
+        if (disposable != null) {
+            disposable.dispose();
         }
     }
 
