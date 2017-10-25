@@ -1,18 +1,18 @@
 package in.farhanali.androidmvp.module.base;
 
 import in.farhanali.androidmvp.data.api.ApiObserver;
-import rx.Observable;
-import rx.subscriptions.CompositeSubscription;
+import io.reactivex.Observable;
+import io.reactivex.disposables.CompositeDisposable;
 
 /**
  * @author Farhan Ali
  *
- * An extension of BasePresenter with facility to subscribe and unsubscribe rx.subscription.
+ * An extension of BasePresenter with facility to subscribe and dispose rx.subscription.
  * Presenters that are going to interact with api/network can extend this.
  */
 public abstract class BaseNetworkPresenter<T extends ViewInteractor> extends BasePresenter<T> {
 
-    protected CompositeSubscription subscription = new CompositeSubscription();
+    protected CompositeDisposable subscription = new CompositeDisposable();
 
     @Override
     public void attachViewInteractor(T viewInteractor) {
@@ -22,7 +22,7 @@ public abstract class BaseNetworkPresenter<T extends ViewInteractor> extends Bas
 
     @Override
     public void detachViewInteractor() {
-        RxSubscriber.unsubscribe(subscription);
+        RxSubscriber.dispose(subscription);
         super.detachViewInteractor();
     }
 

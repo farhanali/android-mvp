@@ -11,8 +11,9 @@ import in.farhanali.androidmvp.data.model.User;
 import in.farhanali.androidmvp.injection.Injector;
 import in.farhanali.androidmvp.module.base.BaseNetworkPresenter;
 import in.farhanali.androidmvp.module.common.util.UserPreference;
+import io.reactivex.Observable;
 import retrofit2.Response;
-import rx.Observable;
+
 
 /**
  * @author Farhan Ali
